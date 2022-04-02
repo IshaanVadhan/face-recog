@@ -9,6 +9,14 @@
     --bg-color-2:#12151c; /**/
 }
 
+body.dark-theme
+{
+    --primary-color:#f54b64; /*--green-1*/
+    --secondary-color:#f65d74; /*--green-2*/
+    --font-color:#000000; /*--white-1*/
+    --bg-color-1:#d5d3cc; /*--black-2,--black-3*/
+    --bg-color-2:#edeae3; /*--black-3*/
+}
 *
 {
     margin: 0;
@@ -39,6 +47,10 @@ html
     margin: auto;
 }
 
+body
+{
+    background: var(--bg-color-2);
+}
 section
 {
     scroll-snap-align: start;
@@ -163,7 +175,7 @@ section .title
     text-align: center;
     font-size: 40px;
     font-weight: 500;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     padding-bottom: 20px;
     font-family: "Ubuntu",sans-serif;
 }
@@ -199,38 +211,42 @@ section .title::after
 }
 .face-recog .title
 {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 .face-recog .face-recog-content
 {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
+    /* margin-top: 10px; */
+    /* display: flex;
+    flex-wrap: wrap; */
+    /* flex-direction: column; */
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 .face-recog .title::after
 {
     background: var(--bg-color-1);
     content: "Smarttendance";
 }
-/* .face-recog .face-recog-content .face-recog-frame
-{
-    width: 50%;
-} */
-.face-recog .face-recog-content .face-recog-frame img
-{
-    /* height: 400px;
-    width: 400px;
-    object-fit: cover; */
-    border-radius: 5px;
-    border: 2px solid var(--primary-color);
-}
 .face-recog .face-recog-content .face-recog-frame
 {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin: 0 auto 25px;
+}
+.face-recog .face-recog-content .face-recog-frame img
+{
+    border-radius: 5px;
+    border: 2px solid var(--primary-color);
+    width: 50%;
+}
+.face-recog .face-recog-content .face-recog-frame textarea
+{
+    border-radius: 5px;
+    resize: none;
+    color: var(--font-color);
+    background-color: var(--bg-color-2);
+    border: 2px solid var(--primary-color);
+    width: 45%;
 }
 .face-recog .max-width
 {
@@ -244,14 +260,38 @@ section .title::after
 {
     display: flex;
     justify-content: center;
-    margin: 0 auto 25px;
+    margin: 0 auto 15px;
     width: 99%;
 }
 .face-recog .face-recog-content .note p
 {
     text-align: center;
 }
-
+.face-recog .face-recog-content .dwnld-btn
+{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 20px;
+    width: 99%;
+}
+.face-recog .face-recog-content .dwnld-btn a
+{
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--bg-color-2);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease; 
+}
+.face-recog .face-recog-content .dwnld-btn a:hover
+{
+    color: var(--primary-color);
+    background: none;
+}
 
 
 
@@ -262,6 +302,21 @@ section .title::after
     .face-recog .face-recog-content .note
     {
         width: 75%;
+    }
+    .face-recog .face-recog-content .face-recog-frame img
+    {
+        width: 92.5%;
+        margin: auto;
+    }
+    .face-recog .face-recog-content .face-recog-frame textarea
+    {
+        width: 92.5%;
+        margin: 2.5% auto 0;
+    }
+    .face-recog .face-recog-content .face-recog-frame
+    {
+        flex-direction: column;
+        /* justify-content: center; */
     }
 }
 @media (max-width: 990px)

@@ -22,6 +22,32 @@ $(document).ready(function()
     $(".dark-mode-btn").click(function()
     {
         $(".dark-mode-btn i").toggleClass("active2");
-        // $(html).toggleClass("changemode");
     })
 });
+
+const themeButton = document.getElementById("theme-button");
+const darkTheme = "dark-theme";
+
+const selectedTheme = localStorage.getItem("selected-theme");
+
+const getCurrentTheme = () =>
+    document.body.classList.contains(darkTheme) ? "dark" : "light";
+
+if (selectedTheme)
+{
+    document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
+    darkTheme
+    );
+}
+
+themeButton.addEventListener("click", () =>
+{
+    document.body.classList.toggle(darkTheme);
+    document.getElementById("home").classList.toggle(bgTheme);
+    localStorage.setItem("selected-theme", getCurrentTheme());
+});
+
+setInterval(function myTimer()
+{
+    document.getElementById("textarea").innerHTML = "Ishaan" + "'s attendance has been marked!<br>";
+},1000);
